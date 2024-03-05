@@ -4,11 +4,27 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:HafezApp"
+    xmlns:pages="clr-namespace:HafezApp.Pages"
     Shell.FlyoutBehavior="Disabled">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    
+
+    <TabBar>
+        <Tab Title="Accueil" Icon="dotnet_bot.svg">
+            <ShellContent ContentTemplate="{DataTemplate pages:MainPage}"/>
+        </Tab>
+
+        <Tab Title="Page 2" Icon="dotnet_bot.svg">
+            <ShellContent ContentTemplate="{DataTemplate pages:Page2}"/>
+        </Tab>
+
+        <Tab Title="Page 3" Icon="dotnet_bot.svg">
+            <ShellContent ContentTemplate="{DataTemplate pages:Page3}"/>
+        </Tab>
+
+        <Tab Title="Page 4" Icon="dotnet_bot.svg">
+            <ShellContent ContentTemplate="{DataTemplate pages:Page4}"/>
+        </Tab>
+    </TabBar>
 
 </Shell>
