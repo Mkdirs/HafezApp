@@ -12,6 +12,7 @@
             HorizontalOptions="Center"/>
 
         <Label
+            x:Name="subtitle"
             Text="Application .NET MAUI"
             FontSize="Subtitle"
             HorizontalOptions="Center"/>

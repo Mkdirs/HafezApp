@@ -8,10 +8,9 @@ public partial class MainPage : ContentPage
 		InitializeComponent();
 	}
 
-    private void Button_Clicked(object sender, EventArgs e)
+    private async void Button_Clicked(object sender, EventArgs e)
     {
 		Shell.Current.GoToAsync("//gif");
-		//TODO: Afficher page gif
     }
 
 
