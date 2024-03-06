@@ -24,34 +24,16 @@ namespace HafezApp
             BaseAddress = new Uri("https://api.sampleapis.com/beers/")
         };
 
-        private Beer[] cache;
-        private object cacheLock = new object();
 
         public Service() {
             
         }
 
-        public async Task fetchBeers()
+        public async Task<Beer[]> fetchBeers(int limit)
         {
             var result = await client.GetFromJsonAsync<List<Beer>>("ale");
-            lock ( cacheLock) {
+            return result.Take(limit).ToArray();
             
-                cache = result.ToArray();
-            }
-            
-        }
-
-        public async Task<Beer[]> listBeers(int limit)
-        {
-            lock(cacheLock)
-            {
-                if (cache == null)
-                {
-                    fetchBeers().Wait();
-                }
-            }
-            
-            return cache.Take(limit).ToArray();
         }
 
     
