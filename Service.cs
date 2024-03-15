@@ -1,4 +1,7 @@
-﻿using System.Net.Http.Json;
+﻿using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Net.Http.Json;
+using System.Security.Cryptography.X509Certificates;
 
 namespace HafezApp
 {
@@ -17,7 +20,26 @@ namespace HafezApp
 
     );
 
-    class Service {
+    public class BeersViewModel : INotifyPropertyChanged
+    {
+        private ObservableCollection<Beer> _beers = new ObservableCollection<Beer>();
+        public ObservableCollection<Beer> Beers {
+            get => _beers;
+            set {
+                _beers = value;
+                NotifyPropertyChanged(nameof( Beers));
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void NotifyPropertyChanged(string propertyName)
+        {
+            PropertyChanged.Invoke( this, new PropertyChangedEventArgs( propertyName ) );
+        }
+    }
+
+    public class Service {
 
         private HttpClient client = new HttpClient()
         {
