@@ -11,12 +11,20 @@ public partial class Page2 : ContentPage
 	{
 		InitializeComponent();
 		service = new Service();
+
 		beersViewModel = new BeersViewModel();
         this.BindingContext = beersViewModel;
         this.Loaded += showData;
 	}
 
-	private async void showData(object sender, EventArgs e)
+    async void OnItemSelected(Object sender, SelectedItemChangedEventArgs e)
+    {
+
+        Beer item = e.SelectedItem as Beer;
+		await Navigation.PushAsync(new ModelDetails(item));
+    }
+
+    private async void showData(object sender, EventArgs e)
 	{
         if (cache == null) {
             indicator.IsRunning = true;

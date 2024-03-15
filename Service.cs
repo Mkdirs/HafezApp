@@ -1,7 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Net.Http.Json;
-using System.Security.Cryptography.X509Certificates;
 
 namespace HafezApp
 {
@@ -27,7 +26,7 @@ namespace HafezApp
             get => _beers;
             set {
                 _beers = value;
-                NotifyPropertyChanged(nameof( Beers));
+                NotifyPropertyChanged(nameof(Beers));
             }
         }
 
@@ -35,8 +34,10 @@ namespace HafezApp
 
         private void NotifyPropertyChanged(string propertyName)
         {
-            PropertyChanged.Invoke( this, new PropertyChangedEventArgs( propertyName ) );
+            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+        
     }
 
     public class Service {

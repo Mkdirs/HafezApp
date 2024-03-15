@@ -10,7 +10,7 @@ public partial class MainPage : ContentPage
 
     private async void Button_Clicked(object sender, EventArgs e)
     {
-		Shell.Current.GoToAsync("//gif");
+		await Navigation.PushAsync(new GifPage());
     }
 
 

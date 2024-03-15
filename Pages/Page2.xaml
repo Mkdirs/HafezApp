@@ -3,22 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HafezApp.Pages.Page2"
              xmlns:vm="clr-namespace:HafezApp"
-             x:DataType="vm:BeersViewModel"
-             Title="Page2">
+             x:DataType="vm:BeersViewModel">
     <VerticalStackLayout>
         <ActivityIndicator x:Name="indicator" IsRunning="true"/>
         <VerticalStackLayout Spacing="10"></VerticalStackLayout>
-        <ListView ItemsSource="{Binding Beers}" HasUnevenRows="True">
+        <ListView ItemsSource="{Binding Beers}" HasUnevenRows="True" ItemSelected="OnItemSelected">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="vm:Beer">
                     <ViewCell>
                         <HorizontalStackLayout Spacing="20" VerticalOptions="Center">
                             <Image Source="{Binding image}" WidthRequest="92" HeightRequest="92"/>
-                            <VerticalStackLayout Spacing="10">
-                                <Label Text="{Binding name}" FontSize="Subtitle" FontAttributes="Bold"/>
-                                <Label Text="{Binding price}"/>
-                                <Label Text="{Binding rating.average}"/>
-                            </VerticalStackLayout>
+                            <Label Text="{Binding name}" FontSize="Subtitle" FontAttributes="Bold" VerticalTextAlignment="Center"/>
                         </HorizontalStackLayout>
                     </ViewCell>
                     
