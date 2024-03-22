@@ -4,9 +4,6 @@
              x:Class="HafezApp.Pages.GifPage"
              Title="GifPage">
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <Image x:Name="gif" Source="menacing.gif" IsAnimationPlaying="False"/>
     </VerticalStackLayout>
 </ContentPage>
