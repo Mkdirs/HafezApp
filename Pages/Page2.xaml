@@ -4,21 +4,23 @@
              x:Class="HafezApp.Pages.Page2"
              xmlns:vm="clr-namespace:HafezApp"
              x:DataType="vm:BeersViewModel">
-    <VerticalStackLayout>
-        <ActivityIndicator x:Name="indicator" IsRunning="true"/>
-        <VerticalStackLayout Spacing="10"></VerticalStackLayout>
-        <ListView ItemsSource="{Binding Beers}" HasUnevenRows="True" ItemSelected="OnItemSelected">
-            <ListView.ItemTemplate>
-                <DataTemplate x:DataType="vm:Beer">
-                    <ViewCell>
-                        <HorizontalStackLayout Spacing="20" VerticalOptions="Center">
-                            <Image Source="{Binding image}" WidthRequest="92" HeightRequest="92"/>
-                            <Label Text="{Binding name}" FontSize="Subtitle" FontAttributes="Bold" VerticalTextAlignment="Center"/>
-                        </HorizontalStackLayout>
-                    </ViewCell>
-                    
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-    </VerticalStackLayout>
+    <ScrollView>
+        <VerticalStackLayout>
+            <ActivityIndicator x:Name="indicator" IsRunning="true"/>
+            <VerticalStackLayout Spacing="10"></VerticalStackLayout>
+            <ListView ItemsSource="{Binding Beers}" HasUnevenRows="True" ItemSelected="OnItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="vm:Beer">
+                        <ViewCell>
+                            <HorizontalStackLayout Spacing="20" VerticalOptions="Center">
+                                <Image Source="{Binding image}" WidthRequest="92" HeightRequest="92"/>
+                                <Label Text="{Binding name}" FontSize="Subtitle" FontAttributes="Bold" VerticalTextAlignment="Center"/>
+                            </HorizontalStackLayout>
+                        </ViewCell>
+
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

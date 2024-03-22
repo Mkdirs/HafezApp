@@ -1,7 +1,13 @@
 ﻿using Android.App;
 using Android.Runtime;
 
+// Needed for Picking photo
+[assembly: UsesPermission(Android.Manifest.Permission.ReadExternalStorage, MaxSdkVersion = 32)]
+[assembly: UsesPermission(Android.Manifest.Permission.ReadMediaImages)]
+
+
 namespace HafezApp;
+
 
 [Application]
 public class MainApplication : MauiApplication
