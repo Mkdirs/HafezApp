@@ -22,7 +22,7 @@
             <ShellContent ContentTemplate="{DataTemplate pages:Page3}" Route="page3"/>
         </Tab>
 
-        <Tab Title="Page 4" Icon="dotnet_bot.svg">
+        <Tab Title="Page 4" Icon="cookie.png">
             <ShellContent ContentTemplate="{DataTemplate pages:Page4}" Route="page4"/>
         </Tab>
     </TabBar>
