@@ -6,6 +6,22 @@ public partial class Page4 : ContentPage
 	public Page4()
 	{
 		InitializeComponent();
+		Task.Run(async () =>
+		{
+			while(true)
+			{
+				walk_gif.TranslationX += 2.5;
+                
+
+                if (walk_gif.TranslationX >= 150)
+				{
+					walk_gif.TranslationX = 0;
+				}
+
+				await Task.Delay(100);
+            }
+			
+		});
 	}
 
 	private async void OnCookieClick(object sender, EventArgs e)
@@ -20,5 +36,12 @@ public partial class Page4 : ContentPage
 		clicks++;
 
 		label.Text = $"{clicks}";
+    }
+
+    protected async override void OnAppearing()
+    {
+        base.OnAppearing();
+		await Task.Delay(100);
+		walk_gif.IsAnimationPlaying = true;
     }
 }
